@@ -13,8 +13,8 @@ void main() {
         'login': ((context) => const LoginPage()),
       },
       theme: ThemeData(
-        scaffoldBackgroundColor: const Color(0xFF001233),
-      ),
+          scaffoldBackgroundColor: const Color(0xFF001233),
+          fontFamily: 'Thasadith'),
     ),
   );
 }
