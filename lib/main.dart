@@ -1,20 +1,22 @@
-import 'package:app_divisao_de_contas/pages/intialPages/initial/initial.page.dart';
-import 'package:app_divisao_de_contas/pages/intialPages/login/login.page.dart';
 import 'package:flutter/material.dart';
+
+import 'pages/intialPages/initial/initial_page.dart';
+import 'pages/intialPages/login/login_page.dart';
 
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Split',
-      initialRoute: 'login',
+      initialRoute: '/initialPage',
       routes: {
-        'initalPage': ((context) => const InitialPage()),
-        'login': ((context) => const LoginPage()),
+        '/initialPage': ((context) => const InitialPage()),
+        '/login': ((context) => const LoginPage()),
       },
       theme: ThemeData(
-          scaffoldBackgroundColor: const Color(0xFF001233),
-          fontFamily: 'Thasadith'),
+        scaffoldBackgroundColor: const Color(0xFF001233),
+        fontFamily: 'Montserrat',
+      ),
     ),
   );
 }

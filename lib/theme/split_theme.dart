@@ -54,13 +54,13 @@ class SplitColors {
     },
   );
 
-  static const int _greyValue = 0xFFE0E1E3;
-  static const SplitThemeColors grey = SplitThemeColors(
-    _greyValue,
+  static const int _grayValue = 0xFFE0E1E3;
+  static const SplitThemeColors gray = SplitThemeColors(
+    _grayValue,
     <int, Color>{
       100: Color(0xFFF1F4F5),
       200: Color(0xFFEFEFEF),
-      300: Color(_greyValue),
+      300: Color(_grayValue),
       400: Color(0xFFC4C7CA),
       500: Color(0xFF909399),
     },
@@ -72,7 +72,7 @@ class SplitTypography {
 
   static TextStyle subtitle1({Color? textColor = Colors.white}) {
     return TextStyle(
-      fontFamily: 'Titillium Web',
+      fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
       fontSize: 20,
       color: textColor,
@@ -82,7 +82,7 @@ class SplitTypography {
 
   static TextStyle subtitle2({Color? textColor = Colors.white}) {
     return TextStyle(
-      fontFamily: 'Titillium Web',
+      fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
       fontSize: 20,
       color: textColor,
@@ -92,7 +92,7 @@ class SplitTypography {
 
   static TextStyle body1({Color? textColor = Colors.white}) {
     return TextStyle(
-      fontFamily: 'Titillium Web',
+      fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
       fontSize: 18,
       color: textColor,
@@ -102,6 +102,7 @@ class SplitTypography {
 
   static TextStyle body2({Color? textColor = Colors.white}) {
     return TextStyle(
+      fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
       fontSize: 18,
       color: textColor,
@@ -111,7 +112,7 @@ class SplitTypography {
 
   static TextStyle body3({Color? textColor = Colors.white}) {
     return TextStyle(
-      fontFamily: 'Titillium Web',
+      fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
       fontSize: 16,
       color: textColor,
@@ -121,7 +122,7 @@ class SplitTypography {
 
   static TextStyle button({Color? textColor = Colors.white}) {
     return TextStyle(
-      fontFamily: 'Titillium Web',
+      fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
       fontSize: 18,
       color: textColor,
@@ -131,7 +132,7 @@ class SplitTypography {
 
   static TextStyle link({Color? textColor = Colors.white}) {
     return TextStyle(
-      fontFamily: 'Titillium Web',
+      fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
       fontSize: 18,
       color: textColor,
@@ -143,7 +144,7 @@ class SplitTypography {
 
   static TextStyle label({Color? textColor = Colors.white}) {
     return TextStyle(
-      fontFamily: 'Titillium Web',
+      fontFamily: 'Montserrat',
       fontWeight: FontWeight.w600,
       fontSize: 12,
       color: textColor,
@@ -178,7 +179,7 @@ const LinearGradient gradientScaffold = LinearGradient(
     Color(0xFFFC0A7F),
   ],
   stops: [
-    0.75,
+    0.65,
     1,
   ],
   begin: Alignment.topCenter,
