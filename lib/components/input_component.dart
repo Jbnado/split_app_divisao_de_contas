@@ -3,66 +3,54 @@ import 'package:flutter/material.dart';
 import '../theme/split_theme.dart';
 
 class InputComponent extends StatefulWidget {
+  final String text;
+  final String theme;
+  final TextInputType inputType;
+  final TextInputAction inputAction;
+  final bool obscureText;
+  final IconData? icon;
+
   const InputComponent({
     Key? key,
     required this.text,
-    required this.theme,
+    this.theme = 'dark',
+    this.inputType = TextInputType.text,
+    this.inputAction = TextInputAction.done,
+    this.obscureText = false,
     this.icon,
-    this.inputType,
-    this.inputAction,
-    this.obscureText,
   }) : super(key: key);
-
-  final String text;
-  final String theme;
-  final IconData? icon;
-  final TextInputType? inputType;
-  final TextInputAction? inputAction;
-  final bool? obscureText;
 
   @override
   State<InputComponent> createState() => _InputComponentState();
 }
 
 class _InputComponentState extends State<InputComponent> {
-  dynamic hasType() {
-    if (widget.inputType != null) {
-      return widget.inputType;
-    } else {
-      return null;
+  bool isObscure = true;
+  Color backgroundColor() {
+    if (widget.theme == 'dark') {
+      return SplitColors.dark2;
+    } else if (widget.theme == 'light') {
+      return SplitColors.gray.shade100;
     }
+    return SplitColors.dark2;
   }
 
-  dynamic hasAction() {
-    if (widget.inputAction != null) {
-      return widget.inputAction;
-    } else {
-      return null;
+  Color textColor() {
+    if (widget.theme == 'dark') {
+      return Colors.white;
+    } else if (widget.theme == 'light') {
+      return SplitColors.dark;
     }
+    return Colors.white;
   }
 
-  dynamic isObscure() {
-    if (widget.obscureText != null) {
-      return widget.obscureText;
-    } else {
-      return false;
+  Color labelColor() {
+    if (widget.theme == 'dark') {
+      return SplitColors.secondary.shade200;
+    } else if (widget.theme == 'light') {
+      return SplitColors.secondary.shade400;
     }
-  }
-
-  Color colorTheme(String whatColor) {
-    if (whatColor == 'bg') {
-      if (widget.theme == 'light') {
-        return SplitColors.gray.shade100;
-      } else {
-        return SplitColors.dark2;
-      }
-    } else {
-      if (widget.theme == 'light') {
-        return Colors.black;
-      } else {
-        return SplitColors.light;
-      }
-    }
+    return SplitColors.secondary.shade200;
   }
 
   dynamic hasIcon() {
@@ -71,7 +59,7 @@ class _InputComponentState extends State<InputComponent> {
         padding: const EdgeInsets.only(right: 8),
         child: Icon(
           widget.icon,
-          color: colorTheme('t'),
+          color: textColor(),
           size: 16,
         ),
       );
@@ -83,30 +71,49 @@ class _InputComponentState extends State<InputComponent> {
   @override
   Widget build(BuildContext context) {
     return TextField(
-      obscureText: isObscure(),
-      style: SplitTypography.body2(
-        textColor: colorTheme('t'),
+      obscureText: widget.obscureText ? isObscure : false,
+      style: SplitTypography.body3(
+        textColor: textColor(),
       ),
-      keyboardType: hasType(),
-      textInputAction: hasAction(),
+      keyboardType: widget.inputType,
+      textInputAction: widget.inputAction,
       decoration: InputDecoration(
-        contentPadding: const EdgeInsets.symmetric(vertical: 20),
-        border: InputBorder.none,
-        hintText: widget.text,
-        hintStyle: SplitTypography.body2(
-          textColor: colorTheme('t'),
+        isDense: true,
+        constraints: const BoxConstraints(
+          maxWidth: 400,
+        ),
+        enabledBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: labelColor(),
+          ),
+        ),
+        focusedBorder: UnderlineInputBorder(
+          borderSide: BorderSide(
+            color: labelColor(),
+          ),
+        ),
+        filled: true,
+        fillColor: backgroundColor(),
+        labelText: widget.text,
+        labelStyle: SplitTypography.body3(
+          textColor: labelColor(),
         ),
         prefixIcon: hasIcon(),
+        suffixIcon: widget.obscureText
+            ? IconButton(
+                onPressed: () {
+                  setState(() {
+                    isObscure = !isObscure;
+                  });
+                },
+                icon: Icon(
+                  isObscure ? Icons.visibility_off : Icons.visibility,
+                  color: labelColor(),
+                ),
+              )
+            : null,
+        // errorText: '',
       ),
     );
   }
 }
-
-// Container(
-//       padding: const EdgeInsets.symmetric(horizontal: 8),
-//       decoration: BoxDecoration(
-//         color: colorTheme('bg'),
-//         border: Border(
-//           bottom: BorderSide(
-//             color: SplitColors.secondary.shade200,
-//             width: 2,
