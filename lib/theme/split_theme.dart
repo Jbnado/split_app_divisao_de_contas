@@ -84,7 +84,7 @@ class SplitTypography {
     return TextStyle(
       fontFamily: 'Montserrat',
       fontWeight: FontWeight.w400,
-      fontSize: 20,
+      fontSize: 14,
       color: textColor,
       fontStyle: FontStyle.normal,
     );
