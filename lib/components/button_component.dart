@@ -1,5 +1,6 @@
-import 'package:app_divisao_de_contas/theme/split_theme.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:app_divisao_de_contas/theme/split_theme.dart';
 
 ///A ElevatedButton created for use the colors of Split App.
 ///
@@ -238,13 +239,17 @@ class _GoogleButtonComponentState extends State<GoogleButtonComponent> {
       onPressed: () {},
       style: ElevatedButton.styleFrom(
         minimumSize: const Size(250, 50),
-        maximumSize: const Size(300, 50),
+        maximumSize: const Size(350, 50),
         primary: SplitColors.light,
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         mainAxisSize: MainAxisSize.min,
         children: [
+          SvgPicture.asset(
+            'assets/icons/icon_google.svg',
+            semanticsLabel: 'custom google icon',
+          ),
           Text(
             '${widget.text} com o Google',
             style: SplitTypography.button(
