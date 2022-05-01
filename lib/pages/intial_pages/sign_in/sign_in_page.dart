@@ -17,21 +17,7 @@ class _SignInPageState extends State<SignInPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          splashRadius: 6,
-          color: SplitColors.light,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          iconSize: 18,
-          icon: const Icon(
-            BootstrapIcons.chevron_left,
-          ),
-        ),
-      ),
+      appBar: const AppBarComponent(),
       body: SafeArea(
         maintainBottomViewPadding: true,
         child: SingleChildScrollView(
@@ -45,14 +31,8 @@ class _SignInPageState extends State<SignInPage> {
             ),
             child: Column(
               children: [
-                Center(
-                  child: Image.asset(
-                    'assets/images/Logo.png',
-                    height: 50,
-                  ),
-                ),
                 const SizedBox(
-                  height: 50,
+                  height: 100,
                 ),
                 Center(
                   child: Text(
@@ -69,7 +49,7 @@ class _SignInPageState extends State<SignInPage> {
                 Column(
                   children: [
                     const Padding(
-                      padding: EdgeInsets.only(bottom: 16),
+                      padding: EdgeInsets.only(bottom: 24),
                       child: InputComponent(
                         text: 'Email',
                         icon: BootstrapIcons.envelope,
@@ -107,7 +87,9 @@ class _SignInPageState extends State<SignInPage> {
                     ),
                     ButtonComponent(
                       text: 'Entrar',
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushReplacementNamed('/home');
+                      },
                     ),
                   ],
                 ),

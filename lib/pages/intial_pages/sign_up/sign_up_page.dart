@@ -17,21 +17,7 @@ class _SignUpPageState extends State<SignUpPage> {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       extendBodyBehindAppBar: true,
-      appBar: AppBar(
-        backgroundColor: Colors.transparent,
-        elevation: 0,
-        leading: IconButton(
-          splashRadius: 6,
-          color: SplitColors.light,
-          onPressed: () {
-            Navigator.pop(context);
-          },
-          iconSize: 18,
-          icon: const Icon(
-            BootstrapIcons.chevron_left,
-          ),
-        ),
-      ),
+      appBar: const AppBarComponent(),
       body: SafeArea(
         maintainBottomViewPadding: true,
         child: Container(
@@ -44,14 +30,8 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           child: Column(
             children: [
-              Center(
-                child: Image.asset(
-                  'assets/images/Logo.png',
-                  height: 50,
-                ),
-              ),
               const SizedBox(
-                height: 24,
+                height: 26,
               ),
               Center(
                 child: Text(
@@ -63,7 +43,7 @@ class _SignUpPageState extends State<SignUpPage> {
                 ),
               ),
               const SizedBox(
-                height: 24,
+                height: 26,
               ),
               Column(
                 children: [
@@ -71,6 +51,15 @@ class _SignUpPageState extends State<SignUpPage> {
                     padding: EdgeInsets.only(bottom: 16),
                     child: GoogleButtonComponent(
                       text: 'Cadastrar',
+                    ),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.only(bottom: 16),
+                    child: Text(
+                      'Ou',
+                      style: SplitTypography.body2(
+                        textColor: SplitColors.secondary.shade200,
+                      ),
                     ),
                   ),
                   const Padding(
