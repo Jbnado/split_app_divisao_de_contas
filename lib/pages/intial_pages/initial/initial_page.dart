@@ -29,8 +29,8 @@ class _InitialPageState extends State<InitialPage> {
             ),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 64,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .15,
                 ),
                 Center(
                   child: Image.asset(
@@ -38,8 +38,8 @@ class _InitialPageState extends State<InitialPage> {
                     height: 75,
                   ),
                 ),
-                const SizedBox(
-                  height: 32,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .08,
                 ),
                 Center(
                   child: Column(
@@ -75,8 +75,8 @@ class _InitialPageState extends State<InitialPage> {
                         style: SplitTypography.title2(),
                         textAlign: TextAlign.center,
                       ),
-                      const SizedBox(
-                        height: 24,
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * .1,
                       ),
                     ],
                   ),

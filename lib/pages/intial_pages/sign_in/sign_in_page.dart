@@ -31,8 +31,8 @@ class _SignInPageState extends State<SignInPage> {
             ),
             child: Column(
               children: [
-                const SizedBox(
-                  height: 100,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .15,
                 ),
                 Center(
                   child: Text(
@@ -43,8 +43,8 @@ class _SignInPageState extends State<SignInPage> {
                     textAlign: TextAlign.center,
                   ),
                 ),
-                const SizedBox(
-                  height: 50,
+                SizedBox(
+                  height: MediaQuery.of(context).size.height * .1,
                 ),
                 Column(
                   children: [
@@ -66,7 +66,7 @@ class _SignInPageState extends State<SignInPage> {
                       ),
                     ),
                     Container(
-                      padding: const EdgeInsets.only(bottom: 32),
+                      padding: const EdgeInsets.only(bottom: 64),
                       constraints: const BoxConstraints(
                         maxWidth: 400,
                       ),

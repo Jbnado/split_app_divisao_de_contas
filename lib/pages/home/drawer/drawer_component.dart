@@ -19,7 +19,9 @@ class _DrawerComponentState extends State<DrawerComponent> {
         child: ListView(
           children: [
             Container(
-              padding: const EdgeInsets.symmetric(vertical: 36, horizontal: 16),
+              padding: EdgeInsets.symmetric(
+                  vertical: MediaQuery.of(context).size.height * .05,
+                  horizontal: MediaQuery.of(context).size.width * .02),
               child: Row(
                 children: [
                   const CircleAvatar(
@@ -27,7 +29,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
                     backgroundImage: NetworkImage(
                         'https://avatars.githubusercontent.com/u/73846881?v=4'),
                   ),
-                  const SizedBox(width: 16),
+                  const SizedBox(width: 10),
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
@@ -37,7 +39,7 @@ class _DrawerComponentState extends State<DrawerComponent> {
                       ),
                       Text(
                         'bernardojoao9@gmail.com',
-                        style: SplitTypography.subtitle2(),
+                        style: SplitTypography.label(),
                         softWrap: true,
                       )
                     ],

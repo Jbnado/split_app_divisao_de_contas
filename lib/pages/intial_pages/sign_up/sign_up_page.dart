@@ -30,8 +30,8 @@ class _SignUpPageState extends State<SignUpPage> {
           ),
           child: Column(
             children: [
-              const SizedBox(
-                height: 26,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .08,
               ),
               Center(
                 child: Text(
@@ -42,8 +42,8 @@ class _SignUpPageState extends State<SignUpPage> {
                   textAlign: TextAlign.center,
                 ),
               ),
-              const SizedBox(
-                height: 26,
+              SizedBox(
+                height: MediaQuery.of(context).size.height * .05,
               ),
               Column(
                 children: [
@@ -87,7 +87,7 @@ class _SignUpPageState extends State<SignUpPage> {
                     ),
                   ),
                   const Padding(
-                    padding: EdgeInsets.only(bottom: 16),
+                    padding: EdgeInsets.only(bottom: 36),
                     child: InputComponent(
                       text: 'Repetir senha',
                       inputAction: TextInputAction.done,
